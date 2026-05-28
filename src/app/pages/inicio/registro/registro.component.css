@@ -1,0 +1,281 @@
+.registro-container {
+  padding: 2rem;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.titulo {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ====== FORMULARIO ====== */
+.form-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.form-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+.form-card h2 {
+  margin: 0 0 1.5rem 0;
+  color: #333;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.75rem;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #fafafa;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #007bff;
+  background-color: white;
+}
+
+.mensaje-exito {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  border: 1px solid #c3e6cb;
+  font-weight: 500;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex: 1;
+}
+
+.btn-guardar {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-guardar:hover {
+  background-color: #0056b3;
+}
+
+.btn-limpiar {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-limpiar:hover {
+  background-color: #545b62;
+}
+
+/* ====== PRODUCTOS ====== */
+.productos-wrapper {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  height: fit-content;
+}
+
+.productos-wrapper h2 {
+  margin: 0 0 1.5rem 0;
+  color: #333;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.75rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #999;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.productos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.productos-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.productos-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.productos-list::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+.producto-item {
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  padding: 1rem;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.producto-item:hover {
+  background: #f0f0f0;
+  border-color: #007bff;
+}
+
+.producto-info {
+  flex: 1;
+}
+
+.producto-info h3 {
+  margin: 0 0 0.75rem 0;
+  color: #333;
+  font-size: 1.05rem;
+}
+
+.producto-info p {
+  margin: 0.5rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.btn-eliminar {
+  background-color: #dc3545;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.btn-eliminar:hover {
+  background-color: #c82333;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .productos-wrapper {
+    height: auto;
+  }
+
+  .productos-list {
+    max-height: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .registro-container {
+    padding: 1rem;
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-card,
+  .productos-wrapper {
+    padding: 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .producto-item {
+    flex-direction: column;
+  }
+
+  .btn-eliminar {
+    width: 100%;
+  }
+}
+
+

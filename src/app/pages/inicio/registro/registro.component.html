@@ -1,0 +1,96 @@
+<div class="registro-container">
+  <h1 class="titulo">Registro de Productos</h1>
+  
+  <div class="content-wrapper">
+    <!-- FORMULARIO -->
+    <div class="form-wrapper">
+      <div class="form-card">
+        <h2>Agregar Producto</h2>
+
+        <div *ngIf="mensajeExito" class="mensaje-exito">
+          ✓ {{ mensajeExito }}
+        </div>
+
+        <form (ngSubmit)="guardar()" class="formulario">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input
+              type="text"
+              [(ngModel)]="producto.nombre"
+              name="nombre"
+              placeholder="Ej: Teclado"
+              class="input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Categoría</label>
+            <input
+              type="text"
+              [(ngModel)]="producto.categoria"
+              name="categoria"
+              placeholder="Ej: Periféricos"
+              class="input"
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Precio</label>
+              <input
+                type="number"
+                [(ngModel)]="producto.precio"
+                name="precio"
+                placeholder="0.00"
+                class="input"
+                min="0"
+                step="0.01"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Stock</label>
+              <input
+                type="number"
+                [(ngModel)]="producto.stock"
+                name="stock"
+                placeholder="0"
+                class="input"
+                min="0"
+              />
+            </div>
+          </div>
+
+          <div class="button-group">
+            <button type="submit" class="btn btn-guardar">Guardar</button>
+            <button type="button" (click)="limpiar()" class="btn btn-limpiar">Limpiar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- LISTA DE PRODUCTOS -->
+    <div class="productos-wrapper">
+      <h2>Productos Registrados</h2>
+
+      <div *ngIf="productosRegistrados.length === 0" class="empty-state">
+        <div class="empty-icon">📦</div>
+        <p>No hay productos aún</p>
+      </div>
+
+      <div *ngIf="productosRegistrados.length > 0" class="productos-list">
+        <div *ngFor="let prod of productosRegistrados; let i = index" class="producto-item">
+          <div class="producto-info">
+            <h3>{{ prod.nombre }}</h3>
+            <p><strong>Categoría:</strong> {{ prod.categoria }}</p>
+            <p><strong>Precio:</strong> {{ prod.precio | currency: 'PEN' }}</p>
+            <p><strong>Stock:</strong> {{ prod.stock }} unidades</p>
+          </div>
+          <button (click)="eliminarProducto(i)" class="btn-eliminar">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
