@@ -1,0 +1,55 @@
+<div class="pregunta1-container">
+  <div class="left-section">
+    <h1 class="titulo">Laboratorio Angular - Cálculo de notas</h1>
+    <p class="descripcion">Ingrese cuatro notas, presione Procesar y observe cómo Angular actualiza los resultados sin recargar la página.</p>
+
+    <div class="input-group">
+      <label>Nota 1</label>
+      <input type="number" [(ngModel)]="nota1" placeholder="0" class="input-field">
+    </div>
+
+    <div class="input-group">
+      <label>Nota 2</label>
+      <input type="number" [(ngModel)]="nota2" placeholder="0" class="input-field">
+    </div>
+
+    <div class="input-group">
+      <label>Nota 3</label>
+      <input type="number" [(ngModel)]="nota3" placeholder="0" class="input-field">
+    </div>
+
+    <div class="input-group">
+      <label>Nota 4</label>
+      <input type="number" [(ngModel)]="nota4" placeholder="0" class="input-field">
+    </div>
+
+    <div class="button-group">
+      <button (click)="procesar()" class="btn btn-procesar">Procesar</button>
+      <button (click)="limpiar()" class="btn btn-limpiar">Limpiar</button>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <h2 class="resultados-titulo">Resultados</h2>
+    <div class="resultado-item">
+      <span class="resultado-label">Suma:</span>
+      <span class="resultado-valor">{{ suma }}</span>
+    </div>
+    <div class="resultado-item">
+      <span class="resultado-label">Resta:</span>
+      <span class="resultado-valor">{{ resta }}</span>
+    </div>
+    <div class="resultado-item">
+      <span class="resultado-label">Multiplicación:</span>
+      <span class="resultado-valor">{{ multiplicacion }}</span>
+    </div>
+    <div class="resultado-item">
+      <span class="resultado-label">Promedio:</span>
+      <span class="resultado-valor">{{ promedio | number: '1.2-2' }}</span>
+    </div>
+    <div class="resultado-item estado-box">
+      <span class="resultado-label">Estado:</span>
+      <span class="resultado-valor" [ngClass]="{'aprobado': estado === 'Aprobado', 'reprobado': estado === 'Reprobado'}">{{ estado }}</span>
+    </div>
+  </div>
+</div>

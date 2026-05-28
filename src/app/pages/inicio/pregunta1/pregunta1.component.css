@@ -1,0 +1,161 @@
+.pregunta1-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.left-section {
+  flex: 1;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.right-section {
+  flex: 1;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+  font-size: 1.8rem;
+  color: #003d82;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.descripcion {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #003d82;
+  box-shadow: 0 0 5px rgba(0, 61, 130, 0.3);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-procesar {
+  background-color: #003d82;
+  color: white;
+}
+
+.btn-procesar:hover {
+  background-color: #002d61;
+}
+
+.btn-limpiar {
+  background-color: #666;
+  color: white;
+}
+
+.btn-limpiar:hover {
+  background-color: #555;
+}
+
+.resultados-titulo {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.resultado-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+}
+
+.resultado-item:last-child {
+  border-bottom: none;
+}
+
+.resultado-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.resultado-valor {
+  color: #003d82;
+  font-weight: bold;
+}
+
+.estado-box {
+  background-color: #e8f0f7;
+  border-radius: 4px;
+  padding: 1.5rem !important;
+  margin-top: 1rem;
+}
+
+.aprobado {
+  color: green;
+}
+
+.reprobado {
+  color: red;
+}
+
+@media (max-width: 768px) {
+  .pregunta1-container {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
